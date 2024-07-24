@@ -40,4 +40,4 @@ jobs:
               run: npm run build
             
             - name: deploy
-              run: aco "deploying... oppsi"
+              run: echo "deploying... oppsi"
