@@ -7,9 +7,14 @@ on:
 jobs:
 
     test:
+        environment: QA
+        env: 
+          env_var: ${{ vars.QA_VAR }}
         runs-on: ubuntu-latest
         steps:
-
+            - name: output env vars
+              run: |
+                  echo " env vars for QA : ${{ env.env_var }} "
             - name: get code
               uses: actions/checkout@v3
 
@@ -60,6 +65,10 @@ jobs:
                     dist
     deploy:
       needs: build
+      environment: prod
+      env:
+        GLOBAL: ${{ vars.YOTAM }}
+        env_var: ${{ vars.PROD_VARS }}
       runs-on: ubuntu-latest
       steps:
             - name: get builted artifacts
@@ -75,4 +84,8 @@ jobs:
             - name: Output Information
               run: | 
                     echo "Global var: ${{ vars.YOTAM }}"
+                        - name: output env vars
+            - name: PROD Information
+              run: |
+                  echo " env vars for PROD : ${{ env.env_var }} "
             
