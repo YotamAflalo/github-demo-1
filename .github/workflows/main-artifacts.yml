@@ -74,5 +74,5 @@ jobs:
               run: echo "deploying... oppsi"
             - name: Output Information
               run: | 
-                    echo "Global var: ${{ env.GLOBAL }}"
+                    echo "Global var: ${{ vars.YOTAM }}"
             
