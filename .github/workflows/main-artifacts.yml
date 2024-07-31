@@ -84,7 +84,7 @@ jobs:
             - name: Output Information
               run: | 
                     echo "Global var: ${{ vars.YOTAM }}"
-                        - name: output env vars
+
             - name: PROD Information
               run: |
                   echo " env vars for PROD : ${{ env.env_var }} "
