@@ -72,4 +72,7 @@ jobs:
               run: echo "${{ needs.build.outputs.script-file }}"
             - name: deploy
               run: echo "deploying... oppsi"
+            - name: Output Information
+              run: | 
+                    echo "Global var: ${{ env.GLOBAL }}"
             
